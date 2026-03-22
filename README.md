@@ -54,29 +54,32 @@ In this section, you will get guide that how to unlock the bootloader
 5. On the ADB section, tap on "Reboot Bootloader". Then it will ask for again, allow it. Swipe Right edge to Left edge and use click to open Fastboot section.
 6. Tap on the Lightning/Cmd floating button
 
-> Now we are gonna run few commands to unlock the bootloader.
+> **Now we are gonna run few commands to unlock the bootloader.**
 
 1. Run this command to check if the device is successfully connected:
 ```
 fastboot getvar all
 ```
 If this gives lots of output about your device then proceed to the next step. If not, reconnect your Target Device with Host Device again then try again. 
+
 2. Run this command to unlock the bootloader:
 ```
 fastboot oem unlock
 ```
 Then Check your Target Phone, it may show a warning screen with giving a text of "pressing volume up (or probably down) button to unlock the bootloader. If it shows volume up to unlock, tap on volume up button
+
 3. **ONLY IF THE PREVIOUS COMMAND GAVE NO OUTPUT ON SCREEN OR GAVE ERROR**:
 ```
 fastboot bootloader unlock
 ```
 Then Check your Target Phone, it may show a warning screen with giving a text of "pressing volume up (or probably down) button to unlock the bootloader. If it shows volume up to unlock, tap on volume up button
+
 4. Your device may get boot into the system after few minutes automatically. If not, run:
 ```
 fastboot reboot
 ```
 
-> Now let's check if the phone's bootloader actually got unlocked or not 
+> **Now let's check if the phone's bootloader actually got unlocked or not**
 
 1. If you device got reset, that means your bootloader has been unlocked. But to be sure do the following steps:
 2. Open Settings, go to About Phone. Tap on "Build Number" 69 times. This will unlock your Developer Options
@@ -108,8 +111,7 @@ Tecno Spark 7 Pro (Android 11) is a Troject Treble & AB slot partitions supporte
 In this section, you will know how to install a GSI ROM
 
 > [!NOTE]
-> This installation process is tested with MistOS GSI ROM
-> You must download the [Tecno Spark 7 Pro Partitions](https://github.com/Prime-TITAN-CameraMan/Tecno-Spark-7-Pro/releases/tag/v1.0) on the Host Phone. But, If you've a different build number, download your firmware from [Here](https://naijarom.com/tecno-spark-7-pro-kf8) and extract VB Meta and boot.img from there.
+> This installation process is tested with MistOS GSI ROM. You must download the [Tecno Spark 7 Pro Partitions](https://github.com/Prime-TITAN-CameraMan/Tecno-Spark-7-Pro/releases/tag/v1.0) on the Host Phone. But, If you've a different build number, download your firmware from [Here](https://naijarom.com/tecno-spark-7-pro-kf8) and extract VB Meta and boot.img from there.
 
 ### Variable
 - Target Phone = Your Phone, where you will unlock the bootloader 
@@ -122,7 +124,7 @@ In this section, you will know how to install a GSI ROM
 4. Open Bugjeager on Host Phone. Connect MicroUSB OTG Plug to the Host Phone and the Charging Cable Plug to Target Phone — Bugjeager should show your device allow it then it will show your device
 5. On the ADB section, tap on "Reboot Bootloader". Then allow access again on Bugjeager. Swipe Right edge to Left edge and use click to open Fastboot section.
 
-> Commands to install the GSI ROM
+> **Commands to install the GSI ROM**
 
 > [!WARNING]
 > Before going to install a GSI ROM, I want to inform you that, **not all GSIs gonna work on the phone**. Plus try to follow the official guide of installing the GSI if available. Otherwise proceed.
@@ -132,41 +134,49 @@ Follow these process on Host Device, Bugjeager
 ```
 fastboot getvar all
 ```
-If lot of output comes, good. Otherwise try reconnecting the Target Device with the Host Device, and try again.}
+If lot of output comes, good. Otherwise try reconnecting the Target Device with the Host Device, and try again.
+
 2. Don't run, only type:
 ```
 fastboot --disable-verity --disable-verification flash vbmeta
 ```
 Now give a space and click on Attachment Icon and select the `stock_vbmeta.img` that you have saved previously and run it — If it gives error, you might made a typo mistake in spelling and gave an extra space. If it says no device, your device may got disconnected, reconnect again 
+
 3. Enter FastbootD Mode:
 ```
 fastboot reboot fastboot
 ```
 Bugjeager may show pop up again. Allow it
+
 4. Check if your device is successfully booted into FastbootD Mode:
 ```
 fastboot getvar is-userspace
 ```
 If it shows nothing or error, reconnect the Target Device with Host Device, if it shows `is-userspace: yes` you are good to go to the next step. If it shows `is-userspace: no`, tru running the no.4 command again. If it still shows `is-userspace: no` then you need to flash the GSI ROM from Bootloader, which needs some refinement. If your says `is-userspace: no` then please watch [Sai Ponnamanda's Video](https://youtu.be/nbPfqLBfKSE?si=V9Fju_dr70Ax7S4i) to see what extra commands you needed to run. Otherwise if your says yes, go on:
+
 5. Erase the system partition:
 ```
 fastboot erase system
 ```
 If it gives error then watch [Sai Ponnamanda's Video](https://youtu.be/nbPfqLBfKSE?si=V9Fju_dr70Ax7S4i), there you will find the exact solution for the error. Otherwise it gets success follow next step
+
 6. Don't run, just type:
 ```
 fastboot flash system
 ```
 Now give a space and click on Attachment Icon and select the `<ROM-Name>.img` that you have saved previously and run it. After the command runs, it will give zero output for 5 minutes. Just wait, then `system 1/5` or `Writing System` will appear which means the ROM is being flashed. Wait until it gets completed. If you get any kind of error, check [Sai Ponnamanda's Video](https://youtu.be/nbPfqLBfKSE?si=V9Fju_dr70Ax7S4i)
+
 7. Now Factory Reset your phone:
 ```
 fastboot -w
 ``` 
+
 8. Now reboot into your system:
 ```
 fastboot reboot
 ``` 
 Now wait, first boot takes 6-9 minutes. If stuck at boot logo for above 15 minutes or bootloop is happening. **If any of them is happening, please note that the GSI ROM won't work on the device, and you have to use a different one**. Check our [Support](#support) in that case.
+
 9. If the device gets booted, setup the device.
 10. Open Settings, About Phone. Then, tap on Build Number 69 times. It will unlock Developer Options — Go to Developer Options, and turn on "USB Debugging" and "Disable ADB Authorisation Timeout" 
 
@@ -210,6 +220,7 @@ On Host Device
 fastboot getvar all
 ```
 If lot of output comes, good. Otherwise try reconnecting the Target Device with the Host Device, and try again.
+
 2. Check if your device supports A/B slot:
 ```
 fastboot getvar has-slot:boot
@@ -232,6 +243,7 @@ Now give a space and click on Attachment Icon and select the `magisk_boot.img` t
 fastboot flash boot
 ```
 Now give a space and click on Attachment Icon and select the `magisk_boot.img` that you have saved previously and run it — If command success, go on. If not, try checking the spelling and spaces are correct or not.
+
 3. Run `fastboot reboot` — If the device is stuck at boot logo above 9 minutes, or causing bootloop. You may have flashed wrong `boot.img`. In that case, come on our [Support group](#support)
 4. If successfully booted, open Magisk. After that, if Magisk says "Additional Step Required", click on it and let it be done. It may ask to reboot the phone again, do it.
 5. You are successfully rooted!
