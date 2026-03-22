@@ -109,7 +109,7 @@ In this section, you will know how to install a GSI ROM
 
 > [!NOTE]
 > This installation process is tested with MistOS GSI ROM
-> You must download the [Tecno Spark 7 Pro Partitions](https://bhaibhai) on the Host Phone. If you've a different build number, download your firmware and get VB Meta and boot.img from there.
+> You must download the [Tecno Spark 7 Pro Partitions](https://github.com/Prime-TITAN-CameraMan/Tecno-Spark-7-Pro/releases/tag/v1.0) on the Host Phone. But, If you've a different build number, download your firmware from [Here](https://naijarom.com/tecno-spark-7-pro-kf8) and extract VB Meta and boot.img from there.
 
 ### Variable
 - Target Phone = Your Phone, where you will unlock the bootloader 
@@ -189,7 +189,7 @@ In this section, you will find out how to root your device
   <summary>If you have different build number and can't the one I provided</summary>
 
 On Host Device
-1. Download your firmware from [Here](https://thailand)
+1. Download your firmware from [Here](https://naijarom.com/tecno-spark-7-pro-kf8)
 2. Extract the zip
 3. Extract `boot.img` from there
 4. Open Magisk, click on "Install" the top one
