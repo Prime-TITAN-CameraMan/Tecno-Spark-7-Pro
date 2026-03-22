@@ -186,14 +186,19 @@ Now wait, first boot takes 6-9 minutes. If stuck at boot logo for above 15 minut
 # Root the device <a name=mahdin></a>
 In this section, you will find out how to root your device
 
+> [!WARNING]
+> Some users noticed automatic reboot, SystemUI crash on latest Magisk version (30.x)
+>
+> Recommended to use Magisk 28.1
+
 ### Variables
 - Target Phone = Your Phone, where you will unlock the bootloader 
 - Host Phone = The second phone, from where you will run commands via Bugjeager
 
 ### Root the device
 1. Make sure on Target Phone, in Developer Options, "USB Debugging" and "Disable ADB Authorisation Timeout" are turned on. And, on Host Phone, check if there's any option called "OTG Connection" in Settings, then Additional Settings. If not, skip this step.
-2. On Target Phone and Host Phone, Download Magisk from [Official GitHub Repository](https://github.com/topjohnwu/Magisk/releases/download/v30.7/Magisk-v30.7.apk) and install it. Also, open it one time and then close it
-3. Now from my Tecno Spark 7 Pro Partitions Archive zip, get the `magisk_boot.img`.
+2. On Target Phone and Host Phone, Download Magisk from [Official GitHub Repository](https://github.com/topjohnwu/Magisk/releases) (recommended Stable Magisk 28.1 release) and install it. Also, open it one time and then close it
+3. Now from my Tecno Spark 7 Pro Partitions Archive zip, get the Magisk patched boot image. `magisk_v307_boot.img` is for Magisk 30.7 and `magisk_v281_boot.img` is for Magisk 28.1.
 
 <details>
   <summary>If you have different build number and can't the one I provided</summary>
