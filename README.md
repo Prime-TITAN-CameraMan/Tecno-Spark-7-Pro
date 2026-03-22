@@ -245,4 +245,4 @@ If you got any error, trouble, issue check [Support](#support)
 # Community & Support <a name=support></a>
 If you get any trouble. Or, wants to get real-time support. Or, wants to talk and get suggestions. Or, anything else. Join our community & support group 
 
-## [Tecno Spark 7 Pro | Support](https://thailand)
+## [Tecno Spark 7 Pro | Support](https://t.me/TecnoSpark7Pro1)
