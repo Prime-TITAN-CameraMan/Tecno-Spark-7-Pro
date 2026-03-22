@@ -226,7 +226,13 @@ fastboot getvar all
 ```
 If lot of output comes, good. Otherwise try reconnecting the Target Device with the Host Device, and try again.
 
-2. Check if your device supports A/B slot:
+2. **If you haven't flashed VB Meta with Disabled Flags;** then Don't run, only type:
+```
+fastboot --disable-verity --disable-verification flash vbmeta
+```
+Now give a space and click on Attachment Icon and select the `stock_vbmeta.img` that you have saved previously and run it — If it gives error, you might made a typo mistake in spelling and gave an extra/less space. If it says no device, your device may got disconnected, reconnect again 
+
+3. Check if your device supports A/B slot:
 ```
 fastboot getvar has-slot:boot
 ```
@@ -249,9 +255,9 @@ fastboot flash boot
 ```
 Now give a space and click on Attachment Icon and select the `magisk_boot.img` that you have saved previously and run it — If command success, go on. If not, try checking the spelling and spaces are correct or not.
 
-3. Run `fastboot reboot` — If the device is stuck at boot logo above 9 minutes, or causing bootloop. You may have flashed wrong `boot.img`. In that case, come on our [Support group](#support)
-4. If successfully booted, open Magisk. After that, if Magisk says "Additional Step Required", click on it and let it be done. It may ask to reboot the phone again, do it.
-5. You are successfully rooted!
+4. Run `fastboot reboot` — If the device is stuck at boot logo above 9 minutes, or causing bootloop. You may have flashed wrong `boot.img`. In that case, come on our [Support group](#support)
+5. If successfully booted, open Magisk. After that, if Magisk says "Additional Step Required", click on it and let it be done. It may ask to reboot the phone again, do it.
+6. You are successfully rooted!
 
 #### Congratulations everything is done
 If you got any error, trouble, issue check [Support](#support)
