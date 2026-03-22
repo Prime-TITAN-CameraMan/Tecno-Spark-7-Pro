@@ -32,7 +32,7 @@ In this section. You will find what to do before unlocking the bootloader
 8. Take a screenshot of all apps — Send it to Host Phone
 9. On Target Phone, remove any Tecno Account if available on settings. Like Xiaomi have Xiaomi account, Realme have Realme account on settings at Accounts or front of the settings app. Remove the Tecno account if available 
 10. On Host Phone, download the GSI ROM
-11. Download the Tecno Spark 7 Pro Partitions Archive on your Host Phone from [GitHub releases](https://bhaibhai.com). If your build number is different, download your firmware from [TS7Pro Firmwares](https://later.com)
+11. Download the Tecno Spark 7 Pro Partitions Archive on your Host Phone from [GitHub releases](https://github.com/Prime-TITAN-CameraMan/Tecno-Spark-7-Pro/releases/tag/v1.0). If your build number is different, download your firmware from [TS7Pro Firmwares](https://naijarom.com/tecno-spark-7-pro-kf8)
 12. Extract the GSI ROM, you will find the `ROM.img` there. Extract the Partitions Archive or firmware and save the `boot.img`, `vbmeta.img` & `magisk_boot.img` (note Magisk patched boot image is only available on my partitions archive zip. If your build number different, you will get your magisk boot.img at rooting process]
 13. Take any additional precautions if you want
 
