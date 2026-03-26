@@ -154,31 +154,37 @@ fastboot getvar is-userspace
 ```
 If it shows nothing or error, reconnect the Target Device with Host Device, if it shows `is-userspace: yes` you are good to go to the next step. If it shows `is-userspace: no`, tru running the no.4 command again. If it still shows `is-userspace: no` then you need to flash the GSI ROM from Bootloader, which needs some refinement. If your says `is-userspace: no` then please watch [Sai Ponnamanda's Video](https://youtu.be/nbPfqLBfKSE?si=V9Fju_dr70Ax7S4i) to see what extra commands you needed to run. Otherwise if your says yes, go on:
 
-5. Erase the system partition:
+5. **Only if your ROM includes or recommends a `product.img` file**. In that case, don't run, only type:
+```
+fastboot flash product
+```
+Now give a space and click on Attachment Icon and select the `product.img` that you have saved previously and run it — If it gives error, you might made a typo mistake in spelling and gave an extra space. If it says no device, your device may got disconnected, reconnect again 
+
+6. Erase the system partition:
 ```
 fastboot erase system
 ```
 If it gives error then watch [Sai Ponnamanda's Video](https://youtu.be/nbPfqLBfKSE?si=V9Fju_dr70Ax7S4i), there you will find the exact solution for the error. Otherwise it gets success follow next step
 
-6. Don't run, just type:
+7. Don't run, just type:
 ```
 fastboot flash system
 ```
 Now give a space and click on Attachment Icon and select the `<ROM-Name>.img` that you have saved previously and run it. After the command runs, it will give zero output for 5 minutes. Just wait, then `system 1/5` or `Writing System` will appear which means the ROM is being flashed. Wait until it gets completed. If you get any kind of error, check [Sai Ponnamanda's Video](https://youtu.be/nbPfqLBfKSE?si=V9Fju_dr70Ax7S4i)
 
-7. Now Factory Reset your phone:
+8. Now Factory Reset your phone:
 ```
 fastboot -w
 ``` 
 
-8. Now reboot into your system:
+9. Now reboot into your system:
 ```
 fastboot reboot
 ``` 
 Now wait, first boot takes 6-9 minutes. If stuck at boot logo for above 15 minutes or bootloop is happening. **If any of them is happening, please note that the GSI ROM won't work on the device, and you have to use a different one**. Check our [Support](#support) in that case.
 
-9. If the device gets booted, setup the device.
-10. Open Settings, About Phone. Then, tap on Build Number 69 times. It will unlock Developer Options — Go to Developer Options, and turn on "USB Debugging" and "Disable ADB Authorisation Timeout" 
+10. If the device gets booted, setup the device.
+11. Open Settings, About Phone. Then, tap on Build Number 69 times. It will unlock Developer Options — Go to Developer Options, and turn on "USB Debugging" and "Disable ADB Authorisation Timeout" 
 
 ---
 <br>
