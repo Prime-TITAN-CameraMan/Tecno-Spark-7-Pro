@@ -70,7 +70,7 @@ Then Check your Target Phone, it may show a warning screen with giving a text of
 
 3. **ONLY IF THE PREVIOUS COMMAND GAVE NO OUTPUT ON SCREEN OR GAVE ERROR**:
 ```
-fastboot bootloader unlock
+fastboot flashing unlock
 ```
 Then Check your Target Phone, it may show a warning screen with giving a text of "pressing volume up (or probably down) button to unlock the bootloader. If it shows volume up to unlock, tap on volume up button
 
